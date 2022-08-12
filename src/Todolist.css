@@ -1,82 +1,718 @@
+*{
+    font-family:'Be Vietnam Pro', Arial, Helvetica, sans-serif;
+}
+
 body{
 
     margin:0;
     padding:0;
-    height:100vh;
+    font-family:'Be Vietnam Pro', Arial, Helvetica, sans-serif;
+    min-height: 100%;
+    max-width: 100%;
 
     }
 
-#NEW_PROJECT_BUTTON{
-
-    margin-top:10rem;
+@font-face {
+        font-family: 'Be Vietnam Pro';
+        src: url(./BeVietnamPro-Regular.ttf) format('truetype');
 }
 
-.NEW_PROJECT_INPUTS {
-
-        display:none;
-
-}
-
-#NEW_PROJECT_SUBMIT {
-
-        display:none;
-}
-
-#CURRENT_PROJECT_INFO {
-
-        display:none;
-}
-
-#ADD_MORE{ 
-
-        display:none;
-}
-
-#TODOLIST_SUBMIT{ 
-
-        display:none;
-
+@font-face {
+    font-family: 'Be Vietnam Pro Black';
+    src: url(./BeVietnamPro-Black.ttf) format('truetype');
 }
 
 
-#SHORTCUT_BOX{
+/*ERROR BOX*/
+    .error_box{
 
-    background-color: brown;
-    width:100%;
-    height:15%;
-    display:block;
-    position:fixed;
+        background-color:#3fe7fd;
+        width:25vw;
+        font-size: 1.5rem;
+        width:75%;
+        text-align:center;
+        color: rgb(48, 0, 20);
+        padding: 1rem;
+        margin-left:auto;
+        margin-right: auto;
+        margin-bottom: 2rem;
         
     }
 
-#RIGHT_BOXES_CONTAINER{
-    
-    background-color: black;
-    width:100%;
-    display:block;
-    height:100%;
-         
+/*ANIMATION*/
+    #animated_object{
+
+        background-color:rgb(63, 231, 253);
+        border-radius: 100%;
+        width:0;
+        height:0;
+        display: none;
+        margin-left: auto;
+        margin-right: auto;
+
     }
 
-#PROJECT_BOX{
+    #animation_container{
 
-    background-color: blue;
-    width:100%;
-    min-height:50%;
-    padding-top:7rem;
-    display:block;
-    box-sizing:border-box;
-      
+        width:100%;
+        bottom:6.9rem;
+        border-radius: 100%;
+        height: 20vh;
+        position: relative;
+        display:none;
+        
+    }
+
+    #dash-animated_object,
+    .dash-animated_object{
+
+        background-color:rgb(63, 231, 253);
+        width:0;
+        height:0.3rem;
+        position: absolute;
+        border-radius: 100%;
+        display: none;
+        transform:rotate(-15deg);
+        
+    }
+
+    #dash-animation_container,
+    .dash-animation_container{
+        width:100%;
+        height: 0;
+        left:20%;
+        bottom:4.5rem;
+        position: relative;
+        display:none;
+    }
+
+    .congrats_message{
+
+        color: rgb(48, 0, 20);
+        font-family:'Be Vietnam Pro Black', Arial, Helvetica, sans-serif;
+        line-height: 2.5rem;
+        padding-top: 15rem;
+        text-transform: uppercase;
+        font-size: 1.8rem;
+        text-align: center;
+    }
+    
+
+
+
+/*SHORTCUT BOX*/
+
+    #SHORTCUT_BOX{
+
+        background-color: rgb(255, 208, 0);
+        width:100%;
+        height:12vh;
+        display:block;
+        position:fixed;
+        overflow-y: hidden; 
+        overflow-x: hidden; 
+        color: rgb(48, 0, 20);
+        
+        }
+    
+
+    #SHORTCUT_BOX div{ /*styles the categories*/
+    
+            font-size: 1rem;
+            font-family:'Be Vietnam Pro Black', Arial, Helvetica, sans-serif;
+            margin-left: 1rem;
+            padding-top: 0.4rem;
+            box-sizing: border-box;  
+            line-height: 1.3rem;        
+            display: block;
+            
+               }
+
+    #SHORTCUT_BOX p{ /*styles the project title names*/
+    
+           margin:0; 
+           
+            }
+
+
+/*PROJECT BOX*/
+
+    #PROJECT_BOX{
+
+        background-color: rgb(48, 0, 20);
+        width:100vw;
+        min-height:87vh;
+        padding-top:6.5rem;
+        display:block;
+        box-sizing:border-box;
+        
+    }
+
+
+    #NEW_PROJECT_BUTTON{
+        
+        
+        margin-top: 19vh;
+        color: rgb(48, 0, 20);
+        background-color: rgb(255, 208, 0);
+        border-style: none;
+        font-size: 3rem;
+        box-sizing: border-box;
+        line-height: 3rem;
+        padding: 2rem;
+        font-weight: 500;
+        width:100vw;
+
+    }
+
+
+    #CANCEL_BUTTON {
+
+        display:none;
+        color: rgb(255, 208, 0);
+        font-family:'Be Vietnam Pro Black', Arial, Helvetica, sans-serif;
+        font-size: 5rem;
+        margin-top: -2.6rem;
+        margin-left:auto;
+        margin-right: auto;
+        width: 4.1rem;
+
+    }
+
+
+    #CANCEL_BUTTON:hover{
+
+        color: rgb(63, 231, 253);
+    }
+
+
+
+    #NEW_PROJECT_INPUTS_CONTAINER{
+        
+        display: none;
+        width:100%;
+        margin-top: -0.5rem;
+
+    }
+
+    .NEW_PROJECT_INPUTS {
+
+            display:block;
+            border: none;
+            background-color: rgb(255, 208, 0);
+            color: rgb(48, 0, 20);
+            margin-top:0.4rem;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 1.5rem;
+            width:70%;
+            box-sizing: border-box;
+            
+    }
+
+    .NEW_PROJECT_INPUTS:focus { 
+        
+        background-color:rgb(63, 231, 253); 
+        border-color:rgb(48, 0, 20);
+        outline: none;
+    }
+
+    #NEW_PROJECT_SUBMIT{
+        
+        display:block;
+        margin-left:auto;
+        margin-right: auto;
+        margin-top: 1.2rem;
+        color: rgb(48, 0, 20);
+        background-color: rgb(255, 208, 0);
+        border-style: none;
+        font-size: 2.7em;
+        box-sizing: border-box;
+        padding: 1.8rem;
+
+    }
+
+    #NEW_PROJECT_SUBMIT:hover{
+
+        background-color:rgb(63, 231, 253);
+    }
+
+
+    #CURRENT_PROJECT_INFO {
+
+        display:none;
+        background-color: rgb(63, 231, 253);
+        color: rgb(48, 0, 20);
+        font-family:'Be Vietnam Pro Black', Arial, Helvetica, sans-serif;
+        font-size: 1.5rem;
+        width:100%;
+        margin-bottom: 0.5rem;
+        margin-left: auto;
+        margin-right: auto;
+        text-transform: uppercase;
+        text-align: center;
+        overflow: hidden;
+            }
+
+
+    .todolist_item_master_container   { /*CONTROLS OVERALL TODOLIST ITEM BOXES SIZE*/
+
+        width:100%;
+    
+    }
+
+    .todolist_box {
+
+        width:100%;
+        display: block;
+        padding:0.5rem 0;
+    
+    }
+
+
+    .todolist_box_after {
+
+        background-color: rgb(48, 0, 20);
+        width:100%;
+        display: block;
+        text-align: center;
+    }
+
+
+    .todolist_box_inputs,
+    .todolist_box_delete_box {
+
+        display:block;
+        margin-left: auto;
+        margin-right: auto;
+        border: none;
+        background-color: #ffd000;
+        color: rgb(48, 0, 20);
+        width:75%;
+        height:2.5rem;
+        margin-top:0.3rem;
+        margin-bottom: 0.3rem;
+        box-sizing: border-box;
+        outline: none;
+            
+    }
+
+    .todolist_box_delete_box {
+
+        display: inline-block;
+        width:3rem;
+        height:3rem;
+        font-size: 2rem;
+        background-color: rgb(63, 231, 253);
+    }
+
+    .extra_buttons_container{
+        width:85%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    #ADD_MORE,
+    #TODOLIST_SUBMIT,
+    #MARK_AS_COMPLETE,
+    #UNPUBLISH { 
+
+        display:none;
+    }
+
+
+    .todolist_buttons {
+        
+        color: rgb(48, 0, 20);
+        background-color: #ffd000;
+        border-style: none;
+        font-size: 1em;
+        width:45%;
+        box-sizing: border-box;
+        padding: 0.5rem;
+        text-align: center;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+        
+        
+    }
+
+
+    .todolist_buttons:focus,
+    .todolist_box_inputs:focus {
+
+        background-color: rgb(63, 231, 253);
+    }
+
+
+
+/*CALENDAR BOX*/
+
+    #CALENDAR_BOX{
+        
+        width:100vw;
+        min-height:13vh;
+        background-color: rgb(63, 231, 253);
+        position:relative;
+    }
+
+
+    table{
+        
+       width:99%;
+       margin-left: auto;
+       margin-right: auto;
+       
+    }
+
+
+    tbody, tr{
+
+        display: block;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 1rem;
+        text-align: center;
+    }
+
+
+    #month_year_box{
+        
+        padding-top: 0.2rem;
+        text-align: center;
+        min-height: 5rem;
+    }
+
+    #month_year_item{
+
+        margin:0;
+        font-family:'Be Vietnam Pro Black', Arial, Helvetica, sans-serif;
+        font-size: 2.5rem;
+        color: rgb(48, 0, 20);
+        display: block; 
+        text-align: center;
+    }
+
+    .date_button{
+        color: rgb(48, 0, 20);
+        background-color: rgb(255, 208, 0);
+        border-style: none;
+        font-size: 2rem;
+        box-sizing: border-box;
+        width:3rem;
+        display:block;
+        margin:0.1rem auto;
+    }
+
+
+    #day_box{
+        display: none;
+        
+    }
+
+
+    td{ 
+        display: inline-block;
+        background-color: rgb(48, 0, 20);
+        width:30%;
+        min-height:4rem;
+        color:rgb(255, 208, 0);
+        margin:0.2rem 0.2rem;
+        margin-left: auto;
+        text-align: left;
+        padding-left:0.5rem;
+        box-sizing:border-box;
+        font-size: 1rem;
+        
+    }
+
+    td:hover {
+
+    background-color:rgb(104, 50, 81);
+
+    }
+
+
+
+/*MEDIA SIZES*/
+
+    @media only screen and (min-height:609px) {
+
+        #CANCEL_BUTTON {
+        
+            margin-top:1rem;         
+        } 
+
+        #NEW_PROJECT_BUTTON{
+
+            margin-top:12rem;   
+
+        }
+    }
+
+
+    @media only screen and (min-width:426px) {
+
+
+
+        .congrats_message{
+
+            line-height: 5rem;
+            font-size: 5rem;
+        }
+
+
+        #SHORTCUT_BOX{
+            overflow-y: hidden; 
+            overflow-x: hidden;   
+            }
+        
+
+
+        #NEW_PROJECT_BUTTON{
+
+            margin-top:9rem;   
+
+        }
+
+        .todolist_buttons {
+        
+            width:49.5%;         
+        } 
+        
+
+        #SHORTCUT_BOX div{ /*styles the categories*/
+    
+            font-size: 1rem;
+            margin-left: 1rem;
+            padding-top: 0.4rem; 
+            line-height: 1.3rem;        
+            display: inline-block;
+            overflow-y: hidden; 
+               }
+
+         #SHORTCUT_BOX p{ 
+    
+           margin:0; 
+           margin-left: 1rem;
+           display: inline-block;
+            
+            }
+            
+
+            #CALENDAR_BOX{
+
+            position: relative;
+            overflow:visible;
+
+            }
+            
+        
+            tr,tbody{
+                display: block;
+                width:95%;
+                margin-left: auto;
+                margin-right: auto;
+                
+            }
+        
+        
+            #month_year_box{
+                
+                padding-top: 1.7rem;
+                
+            }
+        
+            #month_year_item{
+        
+                font-size: 7rem;
+                display: inline-block;
+                
+        
+            }
+        
+            .date_button{
+        
+                margin-top:5rem;
+                font-size: 4rem;
+                box-sizing: border-box;
+                padding: 0.5rem;
+                width:5rem;
+                margin:0 auto;
+        
+            }
+        
+            #day_box{
+                color: rgb(48, 0, 20);
+                background-color:rgb(255, 208, 0);
+                padding: 0.5rem 0;
+                display: none;
+                width:95%;
+                margin-top: 1rem;
+                
+            }
+        
+             th{
+                
+                font-size: 1.2rem;
+                padding:0.5rem;
+                margin-left: 5rem;
+                
+            }
+        
+        
+            td{ 
+                display: inline-block;
+                width:9.5rem;
+                min-height:6rem;
+                margin:0.3rem;
+                padding-left:0.5rem;
+                font-size: 1rem;
+        
+            }
+        
+    }
+
+
+    @media only screen and (orientation: landscape) {
+        #day_box{display:none;}
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.control {
+    font-family: arial;
+    display: none;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 5px;
+    padding-top: 3px;
+    cursor: pointer;
+    font-size: 16px;
 }
 
-#CALENDAR_BOX{
+.control-group{
 
-    background-color: pink;
-    width:100%;
-    height:50%;
-    display:block;
-
+    display: inline-block;
+}
+    .control input {
+       
+        z-index: -1;
+        opacity: 0;
+        display: inline-block;
+}
+        
+    
+.control_indicator {
+    position: absolute;
+    top: 4px;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background: #ffd000;
+    border: 0px solid #000000;
+    border-radius: 0px;
+}
+.control:hover input ~ .control_indicator,
+.control input:focus ~ .control_indicator {
+    background: #3fe7fd;
 }
 
+.control input:checked ~ .control_indicator {
+    background: #3fe7fd;
+}
 
+.control_indicator:after {
+    box-sizing: unset;
+    content: '';
+    position: absolute;
+    display: none;
+}
+.control input:checked ~ .control_indicator:after {
+    display: inline-block;
+}
+.control-checkbox .control_indicator:after {
+    left: 8px;
+    top: 4px;
+    width: 3px;
+    height: 8px;
+    border: solid #ffffff;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
 
+.control-checkbox .control_indicator::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4.413rem;
+    height: 4.5rem;
+    margin-left: -1.3rem;
+    margin-top: -1.3rem;
+    background: #2aa1c0;
+    border-radius: 3rem;
+    opacity: 0.8;
+    z-index: 99999;
+    transform: scale(0);
+}
+@keyframes s-ripple {
+    0% {
+        transform: scale(0);
+    }
+    20% {
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+@keyframes s-ripple-dup {
+   0% {
+       transform: scale(0);
+    }
+   30% {
+        transform: scale(1);
+    }
+    60% {
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+.control-checkbox input + .control_indicator::before {
+    animation: s-ripple 250ms ease-out;
+}
+.control-checkbox input:checked + .control_indicator::before {
+    animation-name: s-ripple-dup;
+}

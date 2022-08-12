@@ -6,19 +6,94 @@
 <script src="main.js"></script>
 </head>
 <body>
- <div id="SHORTCUT_BOX"></div> 
- <div id="RIGHT_BOXES_CONTAINER">
+ <div id="SHORTCUT_BOX">
+ </div> 
+ 
     <div id="PROJECT_BOX">
+        <div id="animation_container">
+            <div id="animated_object"></div>
+        </div>
         <button id="NEW_PROJECT_BUTTON">Start New Project</button>
-        <input class="NEW_PROJECT_INPUTS" type="text"></input>
-        <input class="NEW_PROJECT_INPUTS" type="text"></input>
-        <input class="NEW_PROJECT_INPUTS" type="text"></input>
-        <input id="NEW_PROJECT_SUBMIT" type="submit"></input>
+        <div id="CANCEL_BUTTON">X</div>
+        <div id="NEW_PROJECT_INPUTS_CONTAINER">
+        <input class="NEW_PROJECT_INPUTS" type="text" value="map"></input>
+        <input class="NEW_PROJECT_INPUTS" type="text" placeholder="0000-00-00" value="2022-08-01"/>
+        <input class="NEW_PROJECT_INPUTS" type="text" value="CAR"></input>
+        <input id="NEW_PROJECT_SUBMIT" type="button" value="Publish"></input>
+    </div>
         <div id="CURRENT_PROJECT_INFO"></div>
-        <input id="ADD_MORE" name="add_more" value="+" type="button"></input>
-        <input id="TODOLIST_SUBMIT" type="submit"></input>
+        <div id="dash-animation_container" class="dash-animation_container">
+            <div id="dash-animated_object" class="dash-animated_object"></div>
+        </div>
+        <div class="extra_buttons_container">
+        <input id="ADD_MORE" name="add_more" value="Add More" type="button" class="todolist_buttons"></input>
+        <input id="TODOLIST_SUBMIT" type="button" value="Submit" class="todolist_buttons"></input>
+        <input id="MARK_AS_COMPLETE" type="button" class="todolist_buttons"></input>
+        <input id="UNPUBLISH" type="button" class="todolist_buttons"></input>
+    </div>
     </div>   
-    <div id="CALENDAR_BOX"></div>  
+    <div id="CALENDAR_BOX">
+        <div id="month_year_box">
+            <button id="back_btn" class="date_button"><</button>
+            <p id="month_year_item" ></p>
+            <button id="fwd_btn" class="date_button">></button>
+        </div>
+        <table>
+            <tr id="day_box">
+                <th>Sunday</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>  
 </div>   
 </body>
 </html>
